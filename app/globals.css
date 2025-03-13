@@ -1,0 +1,315 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 99%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 262 83.3% 57.8%;
+    --primary-rgb: 149, 76, 233;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 291 70% 50.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 191 97% 77.3%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83.3% 57.8%;
+
+    --radius: 0.75rem;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 262 83.3% 57.8%;
+    --scrollbar-track: 240 10% 90%;
+  }
+
+  .dark {
+    --background: 220 70% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 70% 7%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 70% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 83.3% 57.8%;
+    --primary-rgb: 149, 76, 233;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 291 70% 50.2%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 191 97% 77.3%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 262 83.3% 57.8%;
+
+    /* Scrollbar Colors */
+    --scrollbar-thumb: 262 83.3% 57.8%;
+    --scrollbar-track: 220 70% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    
+  }
+
+  /* Hide default cursor on desktop */
+  /* @media (min-width: 768px) {
+    * {
+      cursor: none !important;
+    }
+  } */
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
+}
+
+.text-gradient-static {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10;
+}
+
+.card-gradient-hover {
+  @apply hover:bg-gradient-to-br hover:from-primary/20 hover:via-secondary/10 hover:to-accent/20 transition-all duration-300;
+}
+
+.glow-effect {
+  @apply relative;
+}
+
+.glow-effect::before {
+  content: "";
+  @apply absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent rounded-lg blur opacity-50 transition duration-1000 animate-gradient-x;
+  z-index: -1;
+}
+
+.glow-effect:hover::before {
+  @apply opacity-75;
+}
+
+.glass-effect {
+  @apply bg-background/70 backdrop-blur-md border border-white/20;
+}
+
+.glass-card {
+  @apply bg-background/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+#about {
+  padding-bottom: 12rem;
+}
+#anime {
+  bottom: 750px;
+}
+.rounded-lg.border.bg-card.text-card-foreground.shadow-sm.w-full.relative.overflow-hidden {
+  max-height: 730px;
+} 
+.container.max-w-4xl.mx-auto.text-center.z-10 {
+  padding-top: 60px;
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(var(--primary-rgb), 0.2) 20%,
+    rgba(var(--primary-rgb), 0.3) 40%,
+    rgba(var(--primary-rgb), 0.2) 60%,
+    transparent 80%
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Enhanced Custom Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: hsl(var(--scrollbar-track));
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)));
+  border-radius: 10px;
+  border: 2px solid hsl(var(--scrollbar-track));
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+/* Fancy scrollbar with glow effect */
+.fancy-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 4px 0;
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  box-shadow: 0 0 10px hsl(var(--primary));
+}
+
+.fancy-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--secondary));
+  border: 3px solid transparent;
+  background-clip: content-box;
+  box-shadow: 0 0 15px hsl(var(--secondary));
+}
+
+.clip-path-slant {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.clip-path-wave {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 75% 90%, 50% 85%, 25% 90%, 0% 85%);
+}
+
+/* @keyframes cursor-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes cursor-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cursor-color-shift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Add these styles at the end of the file to ensure the page is scrollable html, */
+body {
+  min-height: 100%;
+  height: auto;
+  overflow-y: auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Add this at the end of the file to set a black cursor for the entire site */
+html,
+body,
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 16 16'%3E%3Cpath fill='white' d='M0,0 L0,12 L3,9.5 L5,13 L7,12 L5,8.5 L8,8 L0,0'/%3E%3C/svg%3E"),
+    auto;
+}
+
+/* Add specific cursor types for interactive elements */
+a,
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"],
+.cursor-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M5,2 L5,14 L7,12 L10,15 L12,13.5 L9,10.5 L12,9 L5,2'/%3E%3C/svg%3E"),
+    pointer;
+}
+
+/* Add text cursor for text inputs and editable content */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+[contenteditable="true"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4,2 L4,14 L6,14 L6,2 L4,2 M10,2 L10,14 L12,14 L12,2 L10,2'/%3E%3C/svg%3E"),
+    text;
+}
