@@ -85,14 +85,21 @@
     
   }
 
-  /* Hide default cursor on desktop */
-  /* @media (min-width: 768px) {
-    * {
-      cursor: none !important;
-    }
-  } */
 }
+/* Hide default charater on desktop  */
 
+@media only screen and (max-width: 768px) {
+  #anime {
+    display: none !important;
+  }
+  .container.max-w-4xl.mx-auto.text-center.z-10 {
+    padding-top: 0px !important;
+  }
+  .teck-stack {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
 }
@@ -130,9 +137,7 @@
 .glass-card {
   @apply bg-background/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
-#about {
-  padding-bottom: 12rem;
-}
+
 #anime {
   bottom: 750px;
 }
