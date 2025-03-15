@@ -315,7 +315,7 @@ export default function TechStack() {
             key={tech.name}
             className="flex flex-col items-center justify-center p-4 rounded-xl glass-effect hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
             style={{
-        width: "100px",height: "100px"
+        width: "150px",height: "150px"
         }}
             // variants={{
             //   hidden: { opacity: 0, y: 20, scale: 0.9 },
