@@ -18,6 +18,7 @@ import SkillsChart from "@/components/skills-chart"
 import { SplineScene } from "@/components/hero/splite";
 import { Card } from "@/components/hero/card"
 import { Spotlight } from "@/components/hero/spotlight"
+import TechStack from "@/components/tech-stack"
 
 export default function Home() {
   const controls = useAnimation()
@@ -26,7 +27,7 @@ export default function Home() {
   const experienceRef = useRef(null)
   const projectsRef = useRef(null)
   const contactRef = useRef(null)
-  const testimonialsRef = useRef(null)
+  const techStackRef = useRef(null) 
 
   const [selectedProject, setSelectedProject] = useState(null)
 
@@ -34,7 +35,7 @@ export default function Home() {
   const aboutInView = useInView(aboutRef, { once: false })
   const experienceInView = useInView(experienceRef, { once: false })
   const projectsInView = useInView(projectsRef, { once: false })
-  const testimonialsInView = useInView(testimonialsRef, { once: false })
+  const techStackInView = useInView(techStackRef, { once: false })
 
   useEffect(() => {
     // Function to enable scrolling
@@ -263,13 +264,6 @@ export default function Home() {
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2 }}
           >
-            {/* <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full glass-effect"
-            >
-              <ArrowDown className="h-6 w-6" />
-            </Button> */}
           </motion.div>
         </motion.div>
       </section>
@@ -284,7 +278,7 @@ export default function Home() {
       
 
       {/* About Section */}
-      <section ref={aboutRef} className="py-20 px-4 bg-muted/30 backdrop-blur-sm relative clip-path-slant" id="about">
+      <section ref={aboutRef} className="py-20 px-4 bg-muted/30 backdrop-blur-sm relative clip-path-slant" id="about" style={{paddingBottom: "120px"}}>
          <motion.div
           initial="hidden"
           animate={aboutInView ? "visible" : "hidden"}
@@ -313,12 +307,12 @@ export default function Home() {
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.5, type: "spring", stiffness: 300, damping: 10 }}
               >
-                <p className="font-bold">5+ Years Experience</p>
+                <p className="font-bold">3+ Years Experience</p>
               </motion.div>
             </motion.div>
             <motion.div variants={fadeIn} className="space-y-6">
               <p className="text-lg">
-                I'm a passionate web developer with over 5 years of experience building modern web applications. I
+                I'm a passionate web developer with over 3 years of experience building modern web applications. I
                 specialize in frontend development with React and TypeScript, but I'm also comfortable working with
                 backend technologies.
               </p>
@@ -333,42 +327,13 @@ export default function Home() {
               </div>
             </motion.div>
           </div>
-
-          {/* Stats Cards */}
-          <motion.div variants={fadeIn} className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-            <motion.div className="glass-card rounded-xl p-6 text-center" whileHover={{ y: -5 }}>
-              <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Code className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold">50+</h3>
-              <p className="text-muted-foreground">Projects</p>
-            </motion.div>
-
-            <motion.div className="glass-card rounded-xl p-6 text-center" whileHover={{ y: -5 }}>
-              <div className="bg-secondary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Star className="h-6 w-6 text-secondary" />
-              </div>
-              <h3 className="text-3xl font-bold">30+</h3>
-              <p className="text-muted-foreground">Clients</p>
-            </motion.div>
-
-            <motion.div className="glass-card rounded-xl p-6 text-center" whileHover={{ y: -5 }}>
-              <div className="bg-accent/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Zap className="h-6 w-6 text-accent" />
-              </div>
-              <h3 className="text-3xl font-bold">5+</h3>
-              <p className="text-muted-foreground">Years</p>
-            </motion.div>
-
-            <motion.div className="glass-card rounded-xl p-6 text-center" whileHover={{ y: -5 }}>
-              <div className="bg-primary/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-3xl font-bold">15+</h3>
-              <p className="text-muted-foreground">Awards</p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
+          {/* Tech Stack Section */}  
+          <section id="tech-stack" ref={techStackRef} className="py-20 px-4 relative">
+        <div className="container max-w-6xl mx-auto">
+          <TechStack />
+        </div>
+      </section>    
+          </motion.div>            
       </section>
 
       {/* Experience Section */}
