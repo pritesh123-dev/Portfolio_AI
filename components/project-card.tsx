@@ -12,11 +12,10 @@ interface ProjectCardProps {
   description: string
   tags: string[]
   image: string
-  github: string
   demo: string
 }
 
-export default function ProjectCard({ title, description, tags, image, github, demo }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, image, demo }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -27,7 +26,7 @@ export default function ProjectCard({ title, description, tags, image, github, d
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
-          src={image || "/placeholder.svg"}
+          src={image}
           alt={title}
           className="w-full aspect-video object-cover transition-transform duration-500"
           style={{
@@ -46,11 +45,11 @@ export default function ProjectCard({ title, description, tags, image, github, d
               animate={{ y: isHovered ? 0 : 20, opacity: isHovered ? 1 : 0 }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              <Button size="sm" variant="secondary" asChild className="glass-effect">
+              {/* <Button size="sm" variant="secondary" asChild className="glass-effect">
                 <a href={github} target="_blank" rel="noopener noreferrer">
                   <Github className="mr-2 h-4 w-4" /> Code
                 </a>
-              </Button>
+              </Button> */}
             </motion.div>
             <motion.div
               initial={{ y: 20, opacity: 0 }}

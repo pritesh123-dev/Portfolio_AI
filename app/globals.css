@@ -318,3 +318,16 @@ textarea,
   cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M4,2 L4,14 L6,14 L6,2 L4,2 M10,2 L10,14 L12,14 L12,2 L10,2'/%3E%3C/svg%3E"),
     text;
 }
+
+/* footer */
+.iPljSE {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 1rem;
+  color: rgb(242, 243, 244);
+}

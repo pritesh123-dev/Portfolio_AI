@@ -115,9 +115,9 @@ function StaticStars() {
         sizesArray[i] = (Math.sin(time * (0.2 + 0.1 * Math.sin(i))) + 1) * 0.5 + 0.5
       }
 
-      // (pointsRef.current.geometry.attributes.size as THREE.BufferAttribute).array = sizesArray;
+      (pointsRef.current.geometry.attributes.size as THREE.BufferAttribute).array = sizesArray;
 
-      pointsRef.current.geometry.attributes.size.array = sizesArray
+      // pointsRef.current.geometry.attributes.size.array = sizesArray
       pointsRef.current.geometry.attributes.size.needsUpdate = true
     }
   })
@@ -166,8 +166,8 @@ function FallingStars() {
           positionsArray[i3 + 2] = (Math.random() - 0.5) * 10 - 5
         }
       }
-      // (pointsRef.current.geometry.attributes.position as THREE.BufferAttribute).array = positionsArray;
-      pointsRef.current.geometry.attributes.position.array = positionsArray
+      (pointsRef.current.geometry.attributes.position as THREE.BufferAttribute).array = positionsArray;
+      // pointsRef.current.geometry.attributes.position.array = positionsArray
       pointsRef.current.geometry.attributes.position.needsUpdate = true
     }
   })
@@ -259,8 +259,8 @@ function StarTrails() {
           }
         }
       }
-      // (trailsRef.current.geometry.attributes.position as THREE.BufferAttribute).array = positionsArray;
-      trailsRef.current.geometry.attributes.position.array = positionsArray
+      (trailsRef.current.geometry.attributes.position as THREE.BufferAttribute).array = positionsArray;
+      // trailsRef.current.geometry.attributes.position.array = positionsArray
       trailsRef.current.geometry.attributes.position.needsUpdate = true
     }
   })

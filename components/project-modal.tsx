@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { X, ExternalLink, Github, Calendar, User, Tag } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -35,7 +35,7 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
   })
 
   // Prevent scrolling when modal is open
-  useState(() => {
+  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
     }
@@ -131,11 +131,11 @@ export default function ProjectModal({ isOpen, onClose, project }: ProjectModalP
                   </a>
                 </Button>
 
-                <Button asChild variant="outline" className="glass-effect">
+                {/* <Button asChild variant="outline" className="glass-effect">
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" /> View Code
                   </a>
-                </Button>
+                </Button> */}
               </div>
             </div>
           </motion.div>
