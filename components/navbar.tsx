@@ -71,24 +71,25 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: navItems.length * 0.1 }}
             >
               <ThemeToggle />
-            </motion.div>
-            <motion.div
+            </motion.div> */}
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: navItems.length * 0.1 + 0.1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-            >
-              <Button size="sm" className="ml-4 rounded-full glow-effect">
+            > */}
+              
+              {/* <Button size="sm" className="ml-4 rounded-full glow-effect" onClick={handleDownload}>
                 Resume
-              </Button>
-            </motion.div>
+              </Button> */}
+            {/* </motion.div> */}
           </nav>
 
           {/* Mobile Menu Button */}
