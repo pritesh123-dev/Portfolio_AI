@@ -71,13 +71,13 @@ export default function Navbar() {
                 </Link>
               </motion.div>
             ))}
-            {/* <motion.div
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: navItems.length * 0.1 }}
             >
               <ThemeToggle />
-            </motion.div> */}
+            </motion.div>
             {/* <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
