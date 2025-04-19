@@ -10,7 +10,7 @@ import ProjectCard from "@/components/project-card"
 import ContactForm from "@/components/contact-form"
 import ExperienceTimeline from "@/components/experience-timeline"
 import ProjectModal from "@/components/project-modal"
-import CustomCursor from "@/components/custom-cursor"
+// import CustomCursor from "@/components/custom-cursor"
 import ScrollIndicator from "@/components/scroll-indicator"
 import ScrollToTop from "@/components/scroll-to-top"
 import SplashScreen from "@/components/splash-screen"
@@ -217,7 +217,7 @@ export default function Home() {
     <div className="min-h-screen bg-background custom-scrollbar">
       {/* Add the splash screen with your name */}
       <SplashScreen name="Pritesh" />
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <ScrollIndicator />
       <Navbar />
 
