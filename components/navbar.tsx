@@ -151,13 +151,6 @@ export default function Navbar() {
                   <span className="text-sm font-medium">Toggle Theme</span>
                   <ThemeToggle />
                 </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: navItems.length * 0.1 + 0.1 }}
-                >
-                  <Button className="w-full mt-4 rounded-full glow-effect">Resume</Button>
-                </motion.div>
               </nav>
             </div>
           </motion.div>
