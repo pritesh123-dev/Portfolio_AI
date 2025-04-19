@@ -377,7 +377,7 @@ export default function Home() {
 
 
       {/* Projects Section */}
-      <section id="projects" ref={projectsRef} className="py-20 px-4 relative clip-path-wave">
+      <section id="projects" ref={projectsRef} className="py-20 px-4 relative">
         <motion.div
           initial="hidden"
           animate={projectsInView ? "visible" : "hidden"}
@@ -401,16 +401,6 @@ export default function Home() {
                 <ProjectCard {...project} />
               </motion.div>
             ))}
-          </motion.div>
-          <motion.div
-            variants={fadeIn}
-            className="mt-12 text-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Button variant="outline" className="rounded-full glass-effect">
-              View All Projects <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
           </motion.div>
         </motion.div>
       </section>

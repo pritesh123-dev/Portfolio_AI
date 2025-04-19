@@ -99,6 +99,9 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
   }
+  .clip-path-slant {
+    clip-path: polygon(0 0, 100% 0, 400% 85%, 0 100%);
+  }
 }
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;
@@ -231,11 +234,7 @@
 }
 
 .clip-path-slant {
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-}
-
-.clip-path-wave {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 75% 90%, 50% 85%, 25% 90%, 0% 85%);
+  clip-path: polygon(0 0, 100% 0, 218% 85%, 0 100%);
 }
 
 /* @keyframes cursor-pulse {
