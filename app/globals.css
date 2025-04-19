@@ -87,7 +87,10 @@
 
 }
 /* Hide default charater on desktop  */
-
+.container {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
 @media only screen and (max-width: 768px) {
   #anime {
     display: none !important;
