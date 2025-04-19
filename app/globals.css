@@ -105,6 +105,19 @@
   .clip-path-slant {
     clip-path: polygon(0 0, 100% 0, 400% 85%, 0 100%);
   }
+  .py-5 {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+}
+.scrollclass {
+  padding-top: 1.75rem !important;
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+}
+.scrollclass {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 .text-gradient {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient-x;

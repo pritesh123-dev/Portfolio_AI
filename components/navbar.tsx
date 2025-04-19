@@ -39,7 +39,7 @@ export default function Navbar() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled ? "glass-effect py-3 shadow-sm" : "bg-transparent py-5",
+          isScrolled ? "glass-effect scrollclass shadow-sm" : "bg-transparent py-5",
         )}
       >
         <div className="container max-w-6xl mx-auto px-4 flex items-center justify-between">
