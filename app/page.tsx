@@ -169,7 +169,7 @@ export default function Home() {
 
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "Senior Software Engineer",
       company: "I-Exceed Technology & Solutions",
       period: "2024 - Present",
       description:
